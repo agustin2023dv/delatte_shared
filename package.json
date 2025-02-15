@@ -1,22 +1,43 @@
 {
   "name": "@delatte/shared",
   "version": "1.0.0",
-  "description": "reutilizables",
+  "description": "Interfaces y módulos reutilizables para el proyecto Delatte",
+  "main": "index.js",
   "types": "index.d.ts",
   "private": false,
+  "exports": {
+    "./interfaces": "./interfaces/index.js",
+    "./interfaces/*": "./interfaces/*.js"
+  },
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/agustin2023dv/delatte_shared.git"
+    "url": "https://github.com/agustin2023dv/delatte_shared.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "shared",
+    "typescript",
+    "interfaces"
+  ],
+  "author": "Agustin Fernandez",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/agustin2023dv/delatte_shared/issues"
   },
-  "homepage": "https://github.com/agustin2023dv/delatte_shared#readme"
+  "homepage": "https://github.com/agustin2023dv/delatte_shared#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/sanitize-html": "^2.13.0",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "mongoose": "^8.10.1",
+    "sanitize-html": "^2.14.0"
+  }
 }

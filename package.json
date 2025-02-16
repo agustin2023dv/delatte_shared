@@ -2,7 +2,7 @@
   "name": "@delatte/shared",
   "version": "1.0.0",
   "description": "Interfaces y módulos reutilizables para el proyecto Delatte",
-  "main": "index.js",
+  "main": "index.ts",
   "types": "index.d.ts",
   "private": false,
   "exports": {

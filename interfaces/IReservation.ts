@@ -4,8 +4,8 @@ import { IUser } from './IUser.js';
 
 export interface IReservation extends Document {
   _id: ObjectId | string; // ID de la reserva
-  restaurante: ObjectId | IRestaurant; // ID del restaurante
-  usuario: ObjectId | IUser; // ID del usuario que realiza la reserva
+  restaurante: ObjectId | Partial<IRestaurant>; // ID del restaurante
+  usuario: ObjectId | Partial<IUser>; // ID del usuario que realiza la reserva
   fecha: Date; // Fecha completa de la reserva (día y hora)
   horario: string; // Horario de la reserva (formato HH:MM)
   numAdultos: number; // Número de adultos

@@ -24,9 +24,9 @@ export interface IRestaurant extends Document {
     cantidad: number;
     personasPorMesa: number;
   }[];
-  menus: ObjectId[] | IMenu[]; 
-  managerPrincipal: ObjectId | IUser;
-  coManagers: ObjectId[]  | IUser[];
+  menus: ObjectId[] | Partial<IMenu>[]; 
+  managerPrincipal: ObjectId | Partial<IUser>;
+  coManagers: ObjectId[]  | Partial<IUser>[];
   estaAbierto: boolean;
   ultimaActualizacion: Date;
   ubicacion: {

@@ -15,8 +15,8 @@ export interface IUser extends Document {
   isActive:boolean;
   addresses?: string[]; // Lista opcional de direcciones
   profileImage?: string; // URL opcional de la imagen de perfil
-  favoriteRestaurants?: ObjectId[] | IRestaurant[]; // Lista de IDs de restaurantes favoritos
-  reviews?:ObjectId[] | IReview[];
+  favoriteRestaurants?: ObjectId[] | Partial<IRestaurant>[]; // Lista de IDs de restaurantes favoritos
+  reviews?:ObjectId[] | Partial<IReview>[];
   role: 'customer' | 'manager' | 'superadmin'; // Rol del usuario en el sistema
 }
  

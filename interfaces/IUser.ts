@@ -1,4 +1,6 @@
 import { Document, ObjectId } from 'mongoose';
+import { IRestaurant } from './IRestaurant.js';
+import { IReview } from './IReview.js';
 
 export interface IUser extends Document {
   _id: ObjectId | string; // ID del usuario
@@ -13,8 +15,8 @@ export interface IUser extends Document {
   isActive:boolean;
   addresses?: string[]; // Lista opcional de direcciones
   profileImage?: string; // URL opcional de la imagen de perfil
-  favoriteRestaurants?: ObjectId[]; // Lista de IDs de restaurantes favoritos
-  reviews?:ObjectId[];
+  favoriteRestaurants?: ObjectId[] | IRestaurant[]; // Lista de IDs de restaurantes favoritos
+  reviews?:ObjectId[] | IReview[];
   role: 'customer' | 'manager' | 'superadmin'; // Rol del usuario en el sistema
 }
  

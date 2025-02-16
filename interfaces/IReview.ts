@@ -1,9 +1,11 @@
 import { Document, ObjectId } from 'mongoose';
+import { IUser } from './IUser.js';
+import { IRestaurant } from './IRestaurant.js';
 
 export interface IReview extends Document {
     _id: ObjectId; // Identificador único de la reseña
-    restaurante: ObjectId; // Relación con el restaurante reseñado
-    usuario: ObjectId; // Relación con el usuario que hizo la reseña
+    restaurante: ObjectId | IRestaurant; // Relación con el restaurante reseñado
+    usuario: ObjectId | IUser; // Relación con el usuario que hizo la reseña
     calificacion: number; // Calificación del restaurante, p. ej. del 1 al 5
     comentario: string; // Comentario de la reseña
     fecha: Date; // Fecha en la que se hizo la reseña

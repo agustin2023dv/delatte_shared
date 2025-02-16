@@ -1,4 +1,6 @@
 import { Document, ObjectId } from 'mongoose';
+import { IMenu } from './IMenu.js';
+import { IUser } from './IUser.js';
 
 export interface IRestaurant extends Document {
   _id: ObjectId | string;
@@ -22,9 +24,9 @@ export interface IRestaurant extends Document {
     cantidad: number;
     personasPorMesa: number;
   }[];
-  menus: ObjectId[]; 
-  managerPrincipal: ObjectId;
-  coManagers: ObjectId[];
+  menus: ObjectId[] | IMenu[]; 
+  managerPrincipal: ObjectId | IUser;
+  coManagers: ObjectId[]  | IUser[];
   estaAbierto: boolean;
   ultimaActualizacion: Date;
   ubicacion: {

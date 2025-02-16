@@ -7,6 +7,7 @@ export interface IMenuItem {
 }
 
 export interface IMenu extends Document {
+  _id: ObjectId | string;
   tipo: "Comida" | "Bebidas" | "Postres";
   items: IMenuItem[];
   restaurante: ObjectId; 

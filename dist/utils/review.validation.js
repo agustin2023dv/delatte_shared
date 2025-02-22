@@ -1,27 +1,33 @@
-import { body } from 'express-validator';
-import sanitizeHtml from 'sanitize-html';
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.validateReviewUpdate = exports.validateReview = void 0;
+const express_validator_1 = require("express-validator");
+const sanitize_html_1 = __importDefault(require("sanitize-html"));
 // Middleware de validación para la creación de reviews
-export const validateReview = [
-    body('calificacion')
+exports.validateReview = [
+    (0, express_validator_1.body)('calificacion')
         .isInt({ min: 1, max: 5 })
         .withMessage('La calificación debe ser un número entre 1 y 5')
         .toInt(),
-    body('comentario')
+    (0, express_validator_1.body)('comentario')
         .isString()
         .trim()
         .escape()
-        .customSanitizer((value) => sanitizeHtml(value, { allowedTags: [], allowedAttributes: {} }))
+        .customSanitizer((value) => (0, sanitize_html_1.default)(value, { allowedTags: [], allowedAttributes: {} }))
         .isLength({ min: 5 })
         .withMessage('El comentario debe tener al menos 5 caracteres'),
 ];
 // Middleware de validación para la edición de reviews
-export const validateReviewUpdate = [
-    body('calificacion')
+exports.validateReviewUpdate = [
+    (0, express_validator_1.body)('calificacion')
         .optional()
         .isInt({ min: 1, max: 5 })
         .withMessage('La calificación debe ser un número entre 1 y 5')
         .toInt(),
-    body('comentario')
+    (0, express_validator_1.body)('comentario')
         .optional()
         .isString()
         .trim()

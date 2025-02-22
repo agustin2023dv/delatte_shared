@@ -1,5 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.validateRestaurantUpdate = exports.validateRestaurantCreation = void 0;
 // Función de validación para la creación de un restaurante
-export const validateRestaurantCreation = (req, res, next) => {
+const validateRestaurantCreation = (req, res, next) => {
     const { nombre, direccion } = req.body;
     // Validaciones mínimas para creación
     if (!nombre || typeof nombre !== 'string' || nombre.length < 3) {
@@ -10,8 +13,9 @@ export const validateRestaurantCreation = (req, res, next) => {
     }
     next();
 };
+exports.validateRestaurantCreation = validateRestaurantCreation;
 // Función de validación para la actualización de un restaurante
-export const validateRestaurantUpdate = (req, res, next) => {
+const validateRestaurantUpdate = (req, res, next) => {
     const { nombre, direccion, localidad, telefonos, emailContacto, logo, galeriaFotos, horarios, capacidadMesas, estaAbierto, ultimaActualizacion } = req.body;
     // Validaciones opcionales
     if (nombre && (typeof nombre !== 'string' || nombre.length < 3)) {
@@ -54,3 +58,4 @@ export const validateRestaurantUpdate = (req, res, next) => {
     }
     next();
 };
+exports.validateRestaurantUpdate = validateRestaurantUpdate;

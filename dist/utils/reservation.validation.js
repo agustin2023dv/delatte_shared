@@ -1,5 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.validateNumNinos = exports.validateNumAdultos = exports.validateHorario = exports.validateFecha = void 0;
 // Validar la fecha
-export const validateFecha = (fecha) => {
+const validateFecha = (fecha) => {
     const hoy = new Date();
     const fechaReserva = new Date(fecha);
     if (!fecha) {
@@ -10,8 +13,9 @@ export const validateFecha = (fecha) => {
     }
     return null; // No hay errores
 };
+exports.validateFecha = validateFecha;
 // Validar el horario
-export const validateHorario = (horario) => {
+const validateHorario = (horario) => {
     const horarioRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
     if (!horario) {
         return "El horario es requerido.";
@@ -21,8 +25,9 @@ export const validateHorario = (horario) => {
     }
     return null; // No hay errores
 };
+exports.validateHorario = validateHorario;
 // Validar el número de adultos
-export const validateNumAdultos = (numAdultos) => {
+const validateNumAdultos = (numAdultos) => {
     if (numAdultos === undefined || numAdultos === null) {
         return "La cantidad de adultos es requerida.";
     }
@@ -34,8 +39,9 @@ export const validateNumAdultos = (numAdultos) => {
     }
     return null; // No hay errores
 };
+exports.validateNumAdultos = validateNumAdultos;
 // Validar el número de niños
-export const validateNumNinos = (numNinos) => {
+const validateNumNinos = (numNinos) => {
     if (numNinos > 10) {
         return "La cantidad máxima de niños es 10.";
     }
@@ -44,3 +50,4 @@ export const validateNumNinos = (numNinos) => {
     }
     return null; // No hay errores
 };
+exports.validateNumNinos = validateNumNinos;

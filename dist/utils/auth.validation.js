@@ -1,5 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.validateRestaurantPostCode = exports.validateRestaurantAddress = exports.validateRestaurantName = exports.validateConfirmPassword = exports.validatePassword = exports.validateEmail = exports.validateApellido = exports.validateNombre = void 0;
 // Validar que el nombre solo contenga letras y espacios
-export const validateNombre = (nombre) => {
+const validateNombre = (nombre) => {
     const nameRegex = /^[a-zA-Z\s]+$/;
     if (!nombre)
         return "El nombre es requerido";
@@ -9,9 +12,10 @@ export const validateNombre = (nombre) => {
         return "El nombre debe tener al menos 2 caracteres";
     return null;
 };
+exports.validateNombre = validateNombre;
 //****/
 // Validar que el apellido solo contenga letras y espacios
-export const validateApellido = (apellido) => {
+const validateApellido = (apellido) => {
     const nameRegex = /^[a-zA-Z\s]+$/;
     if (!apellido)
         return "El apellido es requerido";
@@ -21,8 +25,9 @@ export const validateApellido = (apellido) => {
         return "El apellido debe tener al menos 2 caracteres";
     return null;
 };
+exports.validateApellido = validateApellido;
 // Validar el formato del correo electrónico
-export const validateEmail = (email) => {
+const validateEmail = (email) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!email)
         return "El correo es requerido";
@@ -30,8 +35,9 @@ export const validateEmail = (email) => {
         return "El correo no es válido";
     return null;
 };
+exports.validateEmail = validateEmail;
 // Validar la contraseña
-export const validatePassword = (password) => {
+const validatePassword = (password) => {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,}$/;
     if (!password)
         return "La contraseña es requerida";
@@ -39,16 +45,18 @@ export const validatePassword = (password) => {
         return "La contraseña debe tener al menos 7 caracteres, incluyendo una mayúscula, una minúscula, un número y un símbolo";
     return null;
 };
+exports.validatePassword = validatePassword;
 // Validar la confirmación de la contraseña
-export const validateConfirmPassword = (password, cPassword) => {
+const validateConfirmPassword = (password, cPassword) => {
     if (!cPassword)
         return "Confirma la contraseña";
     if (password !== cPassword)
         return "Las contraseñas no coinciden";
     return null;
 };
+exports.validateConfirmPassword = validateConfirmPassword;
 // Validar nombre del restaurante
-export const validateRestaurantName = (restaurantName) => {
+const validateRestaurantName = (restaurantName) => {
     const nameRegex = /^[a-zA-Z0-9\s]+$/; // Permitir letras, números y espacios
     if (!restaurantName)
         return "El nombre del restaurante es requerido";
@@ -58,19 +66,22 @@ export const validateRestaurantName = (restaurantName) => {
         return "El nombre del restaurante debe tener al menos 3 caracteres";
     return null;
 };
+exports.validateRestaurantName = validateRestaurantName;
 // Validar direccion del restaurante
-export const validateRestaurantAddress = (address) => {
+const validateRestaurantAddress = (address) => {
     if (!address)
         return "La dirección del restaurante es requerida";
     if (address.length < 7)
         return "La dirección del restaurante debe tener al menos 7 caracteres";
     return null;
 };
+exports.validateRestaurantAddress = validateRestaurantAddress;
 // Validar codigo postal del restaurante
-export const validateRestaurantPostCode = (address) => {
+const validateRestaurantPostCode = (address) => {
     if (!address)
         return "El codigo postal del restaurante es requerido";
     if (address.length != 5)
         return "La dirección del restaurante debe tener 5 caracteres";
     return null;
 };
+exports.validateRestaurantPostCode = validateRestaurantPostCode;

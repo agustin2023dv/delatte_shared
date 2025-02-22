@@ -1,6 +1,7 @@
 {
   "name": "@delatte/shared",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "Interfaces y módulos reutilizables para el proyecto Delatte",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -1,2 +1,7 @@
-export * from "./utils/index.js";
-export * from "./interfaces/index.js";
+const utils = require("./utils/index");
+const interfaces = require("./interfaces/index");
+
+module.exports = {
+  ...utils,
+  ...interfaces,
+};

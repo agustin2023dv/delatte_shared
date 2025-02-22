@@ -1,3 +1,3 @@
-export declare const validateReview: import("express-validator").ValidationChain[];
-export declare const validateReviewUpdate: import("express-validator").ValidationChain[];
+export declare const validateReview: any[];
+export declare const validateReviewUpdate: any[];
 //# sourceMappingURL=review.validation.d.ts.map

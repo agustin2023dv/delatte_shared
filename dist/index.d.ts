@@ -1,3 +1,3 @@
-export * from "./utils/index.js";
-export * from "./interfaces/index.js";
+declare const utils: any;
+declare const interfaces: any;
 //# sourceMappingURL=index.d.ts.map

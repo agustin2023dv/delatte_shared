@@ -11,7 +11,10 @@
     "./interfaces": "./dist/interfaces/index.js",
     "./interfaces/*": "./dist/interfaces/*.js",
     "./utils": "./dist/utils/index.js",
-    "./utils/*": "./dist/utils/*.js"
+    "./utils/*": "./dist/utils/*.js",
+      "./services": "./dist/services/index.js",
+    "./services/*": "./dist/services/*.js"
+    
   },
   "scripts": {
     "build": "tsc",

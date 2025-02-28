@@ -10,9 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getCloudinarySignature = void 0;
-const getCloudinarySignature = () => __awaiter(void 0, void 0, void 0, function* () {
+const getCloudinarySignature = (type) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield fetch("http://localhost:8081/api/cloudinary/generate-signature");
+        const response = yield fetch(`http://localhost:8081/api/cloudinary/generate-signature/${type}`);
         if (!response.ok)
             throw new Error("No se pudo obtener la firma");
         return yield response.json();

@@ -1,6 +1,4 @@
 import { Document, ObjectId } from 'mongoose';
-import { IRestaurant } from './IRestaurant.js';
-import { IReview } from './IReview.js';
 
 export interface IUser extends Document {
   _id: ObjectId | string; // ID del usuario

@@ -1,10 +1,8 @@
 import { Document, ObjectId } from 'mongoose';
-import { IRestaurant } from './IRestaurant.js';
-import { IUser } from './IUser.js';
 
 export interface IReservation extends Document {
   _id: ObjectId | string; // ID de la reserva
-  restaurante: ObjectId; // ID del restaurante
+  restaurante: ObjectId | { _id: ObjectId | string; nombre: string ; direccion: string  }; // ID del restaurante
   usuario: ObjectId; // ID del usuario que realiza la reserva
   fecha: Date; // Fecha completa de la reserva (día y hora)
   horario: string; // Horario de la reserva (formato HH:MM)

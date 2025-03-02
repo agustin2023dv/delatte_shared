@@ -6,7 +6,12 @@ export interface IReview extends Document {
         nombre: string;
         direccion: string;
     };
-    usuario: ObjectId;
+    usuario: ObjectId | {
+        _id: ObjectId | string;
+        nombre: string;
+        apellido: string;
+        email: string;
+    };
     calificacion: number;
     comentario: string;
     fecha: Date;

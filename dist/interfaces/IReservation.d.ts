@@ -18,7 +18,7 @@ export interface IReservation extends Document {
     numAdultos: number;
     numNinos: number;
     pedidosEspeciales: string;
-    estado: "Pendiente" | "Confirmada" | "Cancelada";
+    estado: "Pasada" | "Confirmada" | "Cancelada";
     fechaCreacion: Date;
 }
 //# sourceMappingURL=IReservation.d.ts.map

@@ -9,6 +9,6 @@
       numAdultos: number; // Número de adultos
       numNinos: number; // Número de niños
       pedidosEspeciales: string; // Nota opcional del usuario (máx. 500 caracteres)
-      estado: "Pendiente" | "Confirmada" | "Cancelada"; // Estado de la reserva
+      estado: "Pasada" | "Confirmada" | "Cancelada"; // Estado de la reserva
       fechaCreacion: Date; // Fecha de creación de la reserva
     }

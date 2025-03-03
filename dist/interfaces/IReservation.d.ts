@@ -6,7 +6,13 @@ export interface IReservation extends Document {
         nombre: string;
         direccion: string;
     };
-    usuario: ObjectId;
+    usuario: ObjectId | {
+        _id: ObjectId | string;
+        nombre: string;
+        apellido: string;
+        email: string;
+        phone: string;
+    };
     fecha: Date;
     horario: string;
     numAdultos: number;

@@ -1,4 +1,5 @@
 import { Document, ObjectId } from 'mongoose';
+export type ReviewStatus = "publicada" | "reported" | "borrada";
 
 export interface IReview extends Document {
     _id: ObjectId; // Identificador único de la reseña
@@ -8,7 +9,7 @@ export interface IReview extends Document {
     comentario: string; // Comentario de la reseña
     fecha: Date; // Fecha en la que se hizo la reseña
     ultimaActualizacion?: Date; // Fecha de última actualización si fue editada
-    status: string; // Estado de la reseña ("publicada", "reported", etc.)
+    status: ReviewStatus; // Estado de la reseña ("publicada", "reported", etc.)
     reportes?: { userId: ObjectId; motivo: string; fecha: Date }[]; // Reportes de usuarios
     respuestas?: {
         usuario: ObjectId | { _id: ObjectId | string; nombre: string };

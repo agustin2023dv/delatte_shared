@@ -1,6 +1,4 @@
 import { Document, ObjectId } from 'mongoose';
-import { IMenu } from './IMenu.js';
-import { IUser } from './IUser.js';
 
 export interface IRestaurant extends Document {
   _id: ObjectId | string;

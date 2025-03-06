@@ -1,5 +1,5 @@
 import { Document, ObjectId } from 'mongoose';
-import { IPromocion } from './IPromotion';
+import { IPromotion } from './IPromotion';
 export declare enum DiasSemana {
     Lunes = "Lunes",
     Martes = "Martes",
@@ -24,7 +24,7 @@ export interface IRestaurant extends Document {
     calificacion: number;
     totalReservas: number;
     totalReviews: number;
-    promociones?: IPromocion[];
+    promociones?: IPromotion[];
     estaTemporalmenteCerrado: boolean;
     horarios: {
         dia: DiasSemana;

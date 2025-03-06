@@ -1,5 +1,5 @@
 import { Document, ObjectId } from "mongoose";
-export interface IPromocion extends Document {
+export interface IPromotion extends Document {
     _id: ObjectId | string;
     restaurante: ObjectId | string;
     titulo: string;

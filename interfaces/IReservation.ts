@@ -1,9 +1,9 @@
-import { Document, ObjectId } from "mongoose";
+import { Document,  Types } from "mongoose";
 
 export interface IReservation extends Document {
-  _id: ObjectId;
-  restaurante: ObjectId;
-  usuario: ObjectId;
+  _id: Types.ObjectId;
+  restaurante: Types.ObjectId;
+  usuario: Types.ObjectId;
   fecha: Date;
   horario: string;
   numAdultos: number;

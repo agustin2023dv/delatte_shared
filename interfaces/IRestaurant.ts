@@ -28,7 +28,7 @@ export interface IRestaurant extends Document {
   totalReservas: number;
   totalReviews: number;
 
-  promociones?: IPromotion[];
+  promociones?: Types.ObjectId[]; // Referencia a promociones
   estaTemporalmenteCerrado: boolean;
 
   horarios: {
@@ -42,9 +42,10 @@ export interface IRestaurant extends Document {
     personasPorMesa: number;
   }[];
 
-  menus: Types.ObjectId[]; 
-  managerPrincipal: Types.ObjectId; 
-  coManagers: Types.ObjectId[];
+  menus: Types.ObjectId[]; // Referencia a menús
+  managerPrincipal: Types.ObjectId; // Referencia a usuario
+  coManagers: Types.ObjectId[]; // Referencia a usuarios
+
   estaAbierto: boolean;
   ultimaActualizacion: Date;
 

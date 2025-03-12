@@ -1,5 +1,4 @@
 import { Document, Types } from 'mongoose';
-import { IPromotion } from './IPromotion';
 export declare enum DiasSemana {
     Lunes = "Lunes",
     Martes = "Martes",
@@ -24,7 +23,7 @@ export interface IRestaurant extends Document {
     calificacion: number;
     totalReservas: number;
     totalReviews: number;
-    promociones?: IPromotion[];
+    promociones?: Types.ObjectId[];
     estaTemporalmenteCerrado: boolean;
     horarios: {
         dia: DiasSemana;

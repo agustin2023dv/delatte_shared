@@ -1,6 +1,43 @@
+// @delatte/shared/dtos/IRestaurantRegistrationDTO.ts
+
+import { DiasSemana } from "../../../interfaces";
+
+
 export interface IRestaurantRegistrationDTO {
+  identity: {
     nombre: string;
+    descripcion?: string;
+  };
+  contact?: {
+    telefono?: string;
+    emailContacto?: string;
+  };
+  location: {
+    pais: string;
+    localidad: string;
     direccion: string;
-    codigoPostal: string;
-  }
-  
+    codigoPostal?: string;
+    ubicacion: {
+      type: "Point";
+      coordinates: [number, number]; // [longitud, latitud]
+    };
+  };
+  tradingHours: {
+    horarios: {
+      dia: DiasSemana;
+      horaApertura: string;
+      horaCierre: string;
+    }[];
+  };
+  capacity: {
+    capacidadMesas: {
+      cantidad: number;
+      personasPorMesa: number;
+    }[];
+  };
+  media?: {
+    logo?: string;
+    galeriaFotos?: string[];
+  };
+  tags?: string[];
+}

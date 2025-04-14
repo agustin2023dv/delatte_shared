@@ -36,5 +36,12 @@ export interface IRestaurantRegistrationDTO {
         galeriaFotos?: string[];
     };
     tags?: string[];
+    /** Datos de gestión del restaurante */
+    management: {
+        /** ID del usuario manager principal */
+        managerPrincipal: string;
+        /** IDs de co-managers (opcional) */
+        coManagers?: string[];
+    };
 }
 //# sourceMappingURL=register-restaurant.dto.d.ts.map

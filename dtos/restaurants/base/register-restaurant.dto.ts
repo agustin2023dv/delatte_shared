@@ -2,7 +2,6 @@
 
 import { DiasSemana } from "../../../interfaces";
 
-
 export interface IRestaurantRegistrationDTO {
   identity: {
     nombre: string;
@@ -40,4 +39,13 @@ export interface IRestaurantRegistrationDTO {
     galeriaFotos?: string[];
   };
   tags?: string[];
+
+  /** Datos de gestión del restaurante */
+  management: {
+    /** ID del usuario manager principal */
+    managerPrincipal: string;
+
+    /** IDs de co-managers (opcional) */
+    coManagers?: string[];
+  };
 }

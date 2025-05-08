@@ -1,3 +1,4 @@
+import { IMenuItemWithId } from "../../../interfaces/Menu/IMenuItemWithId";
 /**
  * DTO de salida para retornar un menú completo.
  */
@@ -8,11 +9,7 @@ export interface IMenuResponseDTO {
         nombre: string;
         direccion: string;
     };
-    tipo: "Comida" | "Bebidas" | "Postres";
-    items: {
-        nombre: string;
-        descripcion: string;
-        precio: number;
-    }[];
+    tipo: 'Comida' | 'Bebidas' | 'Postres';
+    items: IMenuItemWithId[];
 }
 //# sourceMappingURL=menu-response.dto.d.ts.map
